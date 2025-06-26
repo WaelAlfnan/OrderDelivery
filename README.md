@@ -180,7 +180,7 @@ The logical schema outlines the tables, columns, data types, and relationships i
 | Team Member | Role | Responsibility | Contact |
 |-------------|------|----------------|---------|
 | **[Wael Bahaa Alfnan](https://github.com/WaelAlfnan)** | Backend Developer & Team Lead | Core API Development, Database Integration, Architecture Design | [waelbahaa01@gmail.com](waelbahaa01@gmail.com) |
-| **[Dina Gamal Hawas](https://github.com/Dina-Hawas)** | Backend Developer | Business Logic Implementation, API Endpoints, Testing | [dina.ghawas@example.com](Replace with actual email) |
+| **[Dina Gamal Hawas](https://github.com/Dina-Hawas)** | Backend Developer | Business Logic Implementation, API Endpoints, Testing | [dina.ghawas@example.com](dina.ghawas@example.com) |
 
 ---
 
