@@ -37,7 +37,7 @@ OrderDelivery is a robust backend solution for an innovative order delivery plat
 ## **Installation & Setup**
 1. **Clone the repository**:
     ```bash
-    git clone [https://github.com/WaelAlfnan/OrderDelivery.git](https://github.com/WaelAlfnan/OrderDelivery.git)
+    git clone https://github.com/WaelAlfnan/OrderDelivery.git
     ```
 2. **Set up the database**:
     - Ensure SQL Server is running and accessible.
@@ -92,12 +92,12 @@ The system is built upon **Clean Architecture** principles, promoting separation
 ### **Entity-Relationship Diagram (ERD)**
 The ERD visually represents the entities within our system and their relationships, illustrating the core data model for merchants, drivers, orders, and users.
 
-`![ERD](/Media/OrderDeliveryERD.png)`
+![ERD](/Media/OrderDeliveryERD.png)
 
 ### **Logical Schema**
 The logical schema outlines the tables, columns, data types, and relationships in our SQL Server database, ensuring data integrity and efficient data retrieval.
 
-`![Logical Schema](/Media/OrderDeliverySchema.png)`
+![Logical Schema](/Media/OrderDeliverySchema.png)
 
 ---
 
@@ -179,8 +179,8 @@ The logical schema outlines the tables, columns, data types, and relationships i
 ## **Team Members (Backend - .NET)**
 | Team Member | Role | Responsibility | Contact |
 |-------------|------|----------------|---------|
-| **[Wael Bahaa Alfnan](https://github.com/WaelAlfnan)** | Backend Developer & Team Lead | Core API Development, Database Integration, Architecture Design | waelbahaa01@gmail.com *(waelbahaa01@gmail.com)* |
-| **[Dina Gamal Hawas](https://github.com/Dina-Hawas)** | Backend Developer | Business Logic Implementation, API Endpoints, Testing | dina.ghawas@example.com *(Replace with actual email)* |
+| **[Wael Bahaa Alfnan](https://github.com/WaelAlfnan)** | Backend Developer & Team Lead | Core API Development, Database Integration, Architecture Design | [waelbahaa01@gmail.com](waelbahaa01@gmail.com) |
+| **[Dina Gamal Hawas](https://github.com/Dina-Hawas)** | Backend Developer | Business Logic Implementation, API Endpoints, Testing | [dina.ghawas@example.com](Replace with actual email) |
 
 ---
 
