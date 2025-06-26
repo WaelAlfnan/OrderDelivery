@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\OrderDelivery\\OrderDelivery.Infrastructure\\OrderDelivery.Infrastructure.csproj": {}
+    "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Infrastructure\\OrderDelivery.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj": {
+    "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj",
+        "projectUniqueName": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj",
         "projectName": "OrderDelivery.Domain",
-        "projectPath": "D:\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj",
+        "projectPath": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj",
         "packagesPath": "C:\\Users\\waelb\\.nuget\\packages\\",
-        "outputPath": "D:\\OrderDelivery\\OrderDelivery.Domain\\obj\\",
+        "outputPath": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\ProgramFiles(x86)\\MicrosoftVisualStudio\\Shared\\NuGetPackages"
@@ -83,14 +83,14 @@
         }
       }
     },
-    "D:\\OrderDelivery\\OrderDelivery.Infrastructure\\OrderDelivery.Infrastructure.csproj": {
+    "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Infrastructure\\OrderDelivery.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\OrderDelivery\\OrderDelivery.Infrastructure\\OrderDelivery.Infrastructure.csproj",
+        "projectUniqueName": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Infrastructure\\OrderDelivery.Infrastructure.csproj",
         "projectName": "OrderDelivery.Infrastructure",
-        "projectPath": "D:\\OrderDelivery\\OrderDelivery.Infrastructure\\OrderDelivery.Infrastructure.csproj",
+        "projectPath": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Infrastructure\\OrderDelivery.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\waelb\\.nuget\\packages\\",
-        "outputPath": "D:\\OrderDelivery\\OrderDelivery.Infrastructure\\obj\\",
+        "outputPath": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\ProgramFiles(x86)\\MicrosoftVisualStudio\\Shared\\NuGetPackages"
@@ -111,8 +111,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj": {
-                "projectPath": "D:\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj"
+              "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj": {
+                "projectPath": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj"
               }
             }
           }

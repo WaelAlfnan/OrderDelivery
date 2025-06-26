@@ -20,3 +20,15 @@ D:\OrderDelivery\OrderDelivery.Domain\obj\Debug\net8.0\OrderDelivery.Domain.dll
 D:\OrderDelivery\OrderDelivery.Domain\obj\Debug\net8.0\refint\OrderDelivery.Domain.dll
 D:\OrderDelivery\OrderDelivery.Domain\obj\Debug\net8.0\OrderDelivery.Domain.pdb
 D:\OrderDelivery\OrderDelivery.Domain\obj\Debug\net8.0\ref\OrderDelivery.Domain.dll
+D:\OrderDelivery\OrderDelivery\OrderDelivery.Domain\bin\Debug\net8.0\OrderDelivery.Domain.deps.json
+D:\OrderDelivery\OrderDelivery\OrderDelivery.Domain\bin\Debug\net8.0\OrderDelivery.Domain.dll
+D:\OrderDelivery\OrderDelivery\OrderDelivery.Domain\bin\Debug\net8.0\OrderDelivery.Domain.pdb
+D:\OrderDelivery\OrderDelivery\OrderDelivery.Domain\obj\Debug\net8.0\OrderDelivery.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\OrderDelivery\OrderDelivery\OrderDelivery.Domain\obj\Debug\net8.0\OrderDelivery.Domain.AssemblyInfoInputs.cache
+D:\OrderDelivery\OrderDelivery\OrderDelivery.Domain\obj\Debug\net8.0\OrderDelivery.Domain.AssemblyInfo.cs
+D:\OrderDelivery\OrderDelivery\OrderDelivery.Domain\obj\Debug\net8.0\OrderDelivery.Domain.csproj.CoreCompileInputs.cache
+D:\OrderDelivery\OrderDelivery\OrderDelivery.Domain\obj\Debug\net8.0\OrderDelivery.Domain.sourcelink.json
+D:\OrderDelivery\OrderDelivery\OrderDelivery.Domain\obj\Debug\net8.0\OrderDelivery.Domain.dll
+D:\OrderDelivery\OrderDelivery\OrderDelivery.Domain\obj\Debug\net8.0\refint\OrderDelivery.Domain.dll
+D:\OrderDelivery\OrderDelivery\OrderDelivery.Domain\obj\Debug\net8.0\OrderDelivery.Domain.pdb
+D:\OrderDelivery\OrderDelivery\OrderDelivery.Domain\obj\Debug\net8.0\ref\OrderDelivery.Domain.dll

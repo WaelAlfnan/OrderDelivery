@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\OrderDelivery\\OrderDelivery.Application\\OrderDelivery.Application.csproj",
+      "projectUniqueName": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Application\\OrderDelivery.Application.csproj",
       "projectName": "OrderDelivery.Application",
-      "projectPath": "D:\\OrderDelivery\\OrderDelivery.Application\\OrderDelivery.Application.csproj",
+      "projectPath": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Application\\OrderDelivery.Application.csproj",
       "packagesPath": "C:\\Users\\waelb\\.nuget\\packages\\",
-      "outputPath": "D:\\OrderDelivery\\OrderDelivery.Application\\obj\\",
+      "outputPath": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\ProgramFiles(x86)\\MicrosoftVisualStudio\\Shared\\NuGetPackages"
@@ -58,8 +58,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj": {
-              "projectPath": "D:\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj"
+            "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj": {
+              "projectPath": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj"
             }
           }
         }

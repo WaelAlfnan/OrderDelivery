@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj",
+      "projectUniqueName": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj",
       "projectName": "OrderDelivery.Domain",
-      "projectPath": "D:\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj",
+      "projectPath": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Domain\\OrderDelivery.Domain.csproj",
       "packagesPath": "C:\\Users\\waelb\\.nuget\\packages\\",
-      "outputPath": "D:\\OrderDelivery\\OrderDelivery.Domain\\obj\\",
+      "outputPath": "D:\\OrderDelivery\\OrderDelivery\\OrderDelivery.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\ProgramFiles(x86)\\MicrosoftVisualStudio\\Shared\\NuGetPackages"
