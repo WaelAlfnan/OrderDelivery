@@ -102,12 +102,11 @@ The logical schema outlines the tables, columns, data types, and relationships i
 ---
 
 ## **Project Timeline**
-*(This section is optional for a backend-only project unless you have specific delivery phases for features. You can keep it if it applies to your overall project plan, otherwise, consider removing it for a backend-focused README.)*
 
 ### **Development Phases**
 | Phase | Task | Duration |
 |-------|------|----------|
-| **Phase 1** | Define Entities & Enums, Initial ERD & Schema Design | X Days |
+| **Phase 1** | Define Entities & Enums, Initial ERD & Schema Design | 2 Days |
 | **Phase 2** | Setup Clean Architecture Project Structure | X Days |
 | **Phase 3** | Implement Core Domain Entities & Interfaces | X Weeks |
 | **Phase 4** | Database Setup & Initial Migrations (EF Core) | X Weeks |
@@ -116,7 +115,7 @@ The logical schema outlines the tables, columns, data types, and relationships i
 | **Phase 7** | Integrate Location Tracking & Notifications | X Weeks |
 | **Phase 8** | Testing, Debugging & Optimization | X Weeks |
 
-**Project Duration**: Start Date to End Date *(e.g., "June 2025 - August 2025")*
+**Project Duration**: *June 2025 - August 2025*
 
 ---
 
@@ -177,10 +176,10 @@ The logical schema outlines the tables, columns, data types, and relationships i
 ---
 
 ## **Team Members (Backend - .NET)**
-| Team Member | Role | Responsibility | Contact |
-|-------------|------|----------------|---------|
-| **[Wael Bahaa Alfnan](https://github.com/WaelAlfnan)** | Backend Developer & Team Lead | Core API Development, Database Integration, Architecture Design | [waelbahaa01@gmail.com](waelbahaa01@gmail.com) |
-| **[Dina Gamal Hawas](https://github.com/Dina-Hawas)** | Backend Developer | Business Logic Implementation, API Endpoints, Testing | [dina.ghawas@example.com](dina.ghawas@example.com) |
+| Team Member | Role | Responsibility |
+|-------------|------|----------------|
+| **[Wael Bahaa Alfnan](https://github.com/WaelAlfnan)** | Backend Developer | Core API Development, Database Integration, Architecture Design |
+| **[Dina Gamal Hawas](https://github.com/Dina-Hawas)** | Backend Developer | Business Logic Implementation, API Endpoints, Testing |
 
 ---
 
@@ -192,3 +191,31 @@ For comprehensive project details including detailed requirements, technical spe
 ---
 
 ## **Repository Structure**
+
+OrderDelivery/
+├── .github/          # GitHub Actions workflows (CI/CD)
+├── App.Api/          # API layer, entry point
+├── App.Application/  # Application logic, use cases
+├── App.Domain/       # Domain entities, enums, interfaces
+│   ├── Entities/
+│   ├── Enums/
+│   ├── Extensions/
+│   └── Interfaces/
+├── App.Infrastructure/ # Data access, concrete implementations
+├── Tests/            # Unit and Integration Tests (optional, but recommended)
+├── .gitignore
+├── OrderDelivery.sln # Visual Studio Solution file
+└── README.md
+
+
+---
+
+## **Support & Contact**
+For questions, issues, or contributions:
+- **Issues**: [GitHub Issue Tracker](https://github.com/WaelAlfnan/OrderDelivery/issues/new)
+- **Repository**: [OrderDelivery GitHub Repository](https://github.com/WaelAlfnan/OrderDelivery)
+
+---
+
+## **Conclusion**
+The OrderDelivery Backend Solution represents a robust and scalable foundation for modern delivery services. Developed with Clean Architecture and .NET 8, it is designed for high performance, security, and future extensibility, aiming to streamline logistics between local businesses and the freelance driver community.
