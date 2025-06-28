@@ -29,7 +29,7 @@ OrderDelivery is a robust backend solution for an innovative order delivery plat
 - **Backend**: C# (.NET SDK 8)
 - **Web Framework**: ASP.NET Core Web API
 - **Database**: SQL Server with Entity Framework Core
-- **Architecture**: Clean Architecture (App.Api, App.Application, App.Domain, App.Infrastructure)
+- **Architecture**: Clean Architecture (OrderDelivery.Api, OrderDelivery.Application, OrderDelivery.Domain, OrderDelivery.Infrastructure)
 - **ORM**: Entity Framework Core
 
 ---
@@ -37,15 +37,15 @@ OrderDelivery is a robust backend solution for an innovative order delivery plat
 ## **Installation & Setup**
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/WaelAlfnan/OrderDelivery.git
+    git clone [https://github.com/WaelAlfnan/OrderDelivery.git](https://github.com/WaelAlfnan/OrderDelivery.git)
     ```
 2. **Set up the database**:
     - Ensure SQL Server is running and accessible.
-    - Update the database connection string in `appsettings.json` within the `App.Api` or `App.Infrastructure` project (depending on where you centralize configuration).
-    - Navigate to the `App.Infrastructure` project directory in your terminal.
+    - Update the database connection string in `appsettings.json` within the `OrderDelivery.Api`.
+    - Navigate to the `OrderDelivery.Infrastructure` project directory in your terminal.
     - Run Entity Framework Core migrations to create the database schema:
     ```bash
-    dotnet ef database update --project App.Infrastructure --startup-project App.Api
+    dotnet ef database update --project OrderDelivery.Infrastructure --startup-project OrderDelivery.Api
     ```
 3. **Restore NuGet Packages**:
     - Open the solution in Visual Studio or run `dotnet restore` from the solution root directory:
@@ -53,8 +53,8 @@ OrderDelivery is a robust backend solution for an innovative order delivery plat
     dotnet restore
     ```
 4. **Run the application**:
-    - Set `App.Api` as the startup project in Visual Studio and press F5.
-    - Alternatively, navigate to the `App.Api` project directory in your terminal and run:
+    - Set `OrderDelivery.Api` as the startup project in Visual Studio and press F5.
+    - Alternatively, navigate to the `OrderDelivery.Api` project directory in your terminal and run:
     ```bash
     dotnet run
     ```
@@ -98,6 +98,13 @@ The ERD visually represents the entities within our system and their relationshi
 The logical schema outlines the tables, columns, data types, and relationships in our SQL Server database, ensuring data integrity and efficient data retrieval.
 
 ![Logical Schema](/Media/OrderDeliverySchema.png)
+
+---
+
+## **Use Case Diagram**
+The Use Case Diagram illustrates the functional requirements of the system from the perspective of different actors (users), showing how they interact with the system's core functionalities.
+
+![Use Case Diagram](/Media/OrderDeliveryUseCase.png)
 
 ---
 
@@ -162,11 +169,11 @@ The logical schema outlines the tables, columns, data types, and relationships i
 
 ## **Testing Strategy**
 ### **Unit Testing**
-- Extensive unit tests for `App.Domain` and `App.Application` business logic.
+- Extensive unit tests for `OrderDelivery.Domain` and `OrderDelivery.Application` business logic.
 - Ensures individual components function correctly in isolation.
 
 ### **Integration Testing**
-- Tests interactions between `App.Application` and `App.Infrastructure` (e.g., database interactions).
+- Tests interactions between `OrderDelivery.Application` and `OrderDelivery.Infrastructure` (e.g., database interactions).
 - Verifies API endpoint functionality end-to-end (without a frontend).
 
 ### **Performance Testing (Future)**
@@ -179,7 +186,6 @@ The logical schema outlines the tables, columns, data types, and relationships i
 | Team Member | Role | Responsibility |
 |-------------|------|----------------|
 | **[Wael Bahaa Alfnan](https://github.com/WaelAlfnan)** | Backend Developer | Core API Development, Database Integration, Architecture Design |
-| **[Dina Gamal Hawas](https://github.com/Dina-Hawas)** | Backend Developer | Business Logic Implementation, API Endpoints, Testing |
 
 ---
 
@@ -191,7 +197,7 @@ For comprehensive project details including detailed requirements, technical spe
 ---
 
 ## **Repository Structure**
-
+```bash
 OrderDelivery/
 ├── .github/          # GitHub Actions workflows (CI/CD)
 ├── App.Api/          # API layer, entry point
@@ -206,7 +212,7 @@ OrderDelivery/
 ├── .gitignore
 ├── OrderDelivery.sln # Visual Studio Solution file
 └── README.md
-
+```
 
 ---
 
