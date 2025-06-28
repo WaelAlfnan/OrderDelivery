@@ -95,7 +95,7 @@ The ERD visually represents the entities within our system and their relationshi
 ![ERD](/Media/OrderDeliveryERD.png)
 
 ### **Logical Schema**
-The logical schema outlines the tables, columns, data types, and relationships in our SQL Server database, ensuring data integrity and efficient data retrieval.
+The logical schema outlines the tables, columns, data types, and relationships in our SQL Server database, ensuring data integrity and efficient data retrieval. As depicted in the diagram below, it details key entities such as User, Merchant, Driver, Order, Rating, Notification, and AdminUser, along with their respective attributes and the foreign key relationships that link them, supporting the platform's data integrity and efficient operations.
 
 ![Logical Schema](/Media/OrderDeliverySchema.png)
 
