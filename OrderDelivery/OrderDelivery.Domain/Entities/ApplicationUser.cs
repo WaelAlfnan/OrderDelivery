@@ -14,5 +14,9 @@ namespace OrderDelivery.Domain.Entities
         public UserType UserType { get; set; }
         public string PhoneNumber { get; set; } = string.Empty;
         public bool LockoutEnabled { get; set; }
+
+        public virtual Merchant? Merchant { get; set; }
+        public virtual Driver? Driver { get; set; }
+
     }
 }
