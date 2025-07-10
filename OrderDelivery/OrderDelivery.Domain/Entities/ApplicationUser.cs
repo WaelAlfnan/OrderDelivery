@@ -16,12 +16,16 @@ namespace OrderDelivery.Domain.Entities
         public bool LockoutEnabled { get; set; }
 
 
-        // Navigation Properties
+        // Navigation Properties (One-to-One)
         public virtual Merchant? Merchant { get; set; }
         public virtual Driver? Driver { get; set; }
         public virtual Admin? Admin { get; set; }
-        public virtual ICollection<Rating> RatingsGiven { get; set; } = new List<Rating>(); // التقييمات التي أعطاها المستخدم
-        public virtual ICollection<Rating> RatingsReceived { get; set; } = new List<Rating>(); // التقييمات التي تلقاها المستخدم
+
+        // Navigation Properties (One-to-Many)
+        public virtual ICollection<Rating> RatingsGiven { get; set; } = new List<Rating>();
+        public virtual ICollection<Rating> RatingsReceived { get; set; } = new List<Rating>();
+        public ICollection<Notification> Notifications { get; set; } = new List<Notification>();
+
 
     }
 }

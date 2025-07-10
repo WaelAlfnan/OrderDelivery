@@ -2,7 +2,7 @@
 {
     public class Rating
     {
-        public Guid RatingId { get; set; } // Primary Key
+        public Guid Id { get; set; } // Primary Key
 
         public Guid OrderId { get; set; } // Foreign Key to Order (الطلب الذي تم تقييمه)
         public Guid EvaluatorApplicationUserId { get; set; }
