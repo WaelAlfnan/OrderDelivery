@@ -1,15 +1,14 @@
-﻿using OrderDelivery.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using OrderDelivery.Domain.Enums;
 
 namespace OrderDelivery.Domain.Entities
 {
     public class Driver
     {
         public Guid Id { get; set; }
+        public Guid ApplicationUserId { get; set; }
+
+        public VehicleType VehicleType { get; set; }
         public bool IsAvailable { get; set; }
         public decimal Rating { get; set; }
         public int TotalDeliveries { get; set; }
@@ -17,9 +16,9 @@ namespace OrderDelivery.Domain.Entities
         public decimal CurrentLongitude { get; set; }
 
 
-        public Guid ApplicationUserId { get; set; }
 
         // Navigation Properties
         public virtual ApplicationUser AppUser { get; set; } = null!;
+        public virtual Vehicle Vehicle { get; set; }
     }
 }
