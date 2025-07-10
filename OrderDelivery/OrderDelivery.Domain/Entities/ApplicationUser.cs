@@ -20,6 +20,8 @@ namespace OrderDelivery.Domain.Entities
         public virtual Merchant? Merchant { get; set; }
         public virtual Driver? Driver { get; set; }
         public virtual Admin? Admin { get; set; }
+        public virtual ICollection<Rating> RatingsGiven { get; set; } = new List<Rating>(); // التقييمات التي أعطاها المستخدم
+        public virtual ICollection<Rating> RatingsReceived { get; set; } = new List<Rating>(); // التقييمات التي تلقاها المستخدم
 
     }
 }

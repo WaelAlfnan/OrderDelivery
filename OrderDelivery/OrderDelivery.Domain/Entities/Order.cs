@@ -29,5 +29,6 @@ namespace OrderDelivery.Domain.Entities
         // Navigation Properties
         public virtual Merchant Merchant { get; set; } = null!;
         public virtual Driver? Driver { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; } = new List<Rating>(); // التقييمات المتعلقة بهذا الطلب
     }
 }
