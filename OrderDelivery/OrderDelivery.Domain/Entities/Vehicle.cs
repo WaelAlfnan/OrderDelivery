@@ -14,6 +14,6 @@ namespace OrderDelivery.Domain.Entities
         public string? VehiclePlateNumber { get; set; }
 
         // Navigation Properties
-        public Driver Driver { get; set; } = null!;
+        public virtual Driver Driver { get; set; } = null!;
     }
 }

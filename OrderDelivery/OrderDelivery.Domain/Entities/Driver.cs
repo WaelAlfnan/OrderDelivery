@@ -20,5 +20,6 @@ namespace OrderDelivery.Domain.Entities
         // Navigation Properties
         public virtual ApplicationUser AppUser { get; set; } = null!;
         public virtual Vehicle Vehicle { get; set; }
+        public virtual Residence Residence { get; set; }
     }
 }
