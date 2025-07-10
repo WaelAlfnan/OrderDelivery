@@ -15,6 +15,8 @@ namespace OrderDelivery.Domain.Entities
         public string PhoneNumber { get; set; } = string.Empty;
         public bool LockoutEnabled { get; set; }
 
+
+        // Navigation Properties
         public virtual Merchant? Merchant { get; set; }
         public virtual Driver? Driver { get; set; }
 

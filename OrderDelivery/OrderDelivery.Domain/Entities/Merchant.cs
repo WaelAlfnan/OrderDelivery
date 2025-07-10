@@ -8,19 +8,20 @@ namespace OrderDelivery.Domain.Entities
 {
     public class Merchant
     {
-        public Guid ApplicationUserId { get; set; }     // Foreign Key to ApplicationUser entity
-
+        public Guid Id { get; set; }
         public string StoreName { get; set; } = string.Empty;
         public string StoreAddress { get; set; } = string.Empty;
-        public string StoreType { get; set; } = string.Empty; // (e.g., Supermarket, Restaurant, Pharmacy)
+        public string StoreType { get; set; } = string.Empty;
         public decimal StoreLatitude { get; set; } 
         public decimal StoreLongitude { get; set; }
-        public decimal Rating { get; set; } // متوسط تقييم المتجر
-        public int TotalOrders { get; set; } // إجمالي عدد الطلبات التي تم وضعها بواسطة هذا المتجر
-        public string BusinessLicenseNumber { get; set; } = string.Empty; // رقم الترخيص التجاري
+        public decimal Rating { get; set; }
+        public int TotalOrders { get; set; }
+        public string BusinessLicenseNumber { get; set; } = string.Empty;
 
 
-        // Navigation Property
-        public virtual ApplicationUser AppUser { get; set; } = null!; // Required navigation property for the parent User
+        public Guid ApplicationUserId { get; set; }
+
+        // Navigation Properties
+        public virtual ApplicationUser AppUser { get; set; } = null!;
     }
 }

@@ -9,13 +9,17 @@ namespace OrderDelivery.Domain.Entities
 {
     public class Driver
     {
-        public Guid ApplicationUserId { get; set; }   // Foreign Key to User entity
+        public Guid Id { get; set; }
         public bool IsAvailable { get; set; }
         public decimal Rating { get; set; }
         public int TotalDeliveries { get; set; }
         public decimal CurrentLatitude { get; set; }
         public decimal CurrentLongitude { get; set; }
 
+
+        public Guid ApplicationUserId { get; set; }
+
+        // Navigation Properties
         public virtual ApplicationUser AppUser { get; set; } = null!;
     }
 }
