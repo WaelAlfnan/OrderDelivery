@@ -1,9 +1,9 @@
 ﻿namespace OrderDelivery.Domain.Enums
 {
-    public enum UserType
+    public enum AdminRole
     {
-        Merchant,
-        Driver,
-        Admin
+        SuperAdmin,
+        Moderator,
+        Support
     }
 }

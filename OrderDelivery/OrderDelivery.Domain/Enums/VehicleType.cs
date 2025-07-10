@@ -1,9 +1,9 @@
 ﻿namespace OrderDelivery.Domain.Enums
 {
-    public enum UserType
+    public enum VehicleType
     {
-        Merchant,
-        Driver,
-        Admin
+        Cycle,
+        Motorcycle,
+        TukTuk
     }
 }

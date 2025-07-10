@@ -1,9 +1,11 @@
 ﻿namespace OrderDelivery.Domain.Enums
 {
-    public enum UserType
+    public enum MessageType
     {
-        Merchant,
-        Driver,
-        Admin
+        OrderUpdate,
+        DriverRequest,
+        Promotion,
+        SystemAlert,
+        RatingNotification
     }
 }

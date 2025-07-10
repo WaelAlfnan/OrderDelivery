@@ -1,9 +1,8 @@
 ﻿namespace OrderDelivery.Domain.Enums
 {
-    public enum UserType
+    public enum PaymentMethod
     {
-        Merchant,
-        Driver,
-        Admin
+        CashOnDelivery,
+        OnlinePayment
     }
 }
