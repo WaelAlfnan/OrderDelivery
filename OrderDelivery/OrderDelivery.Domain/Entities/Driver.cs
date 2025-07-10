@@ -1,5 +1,4 @@
-﻿
-using OrderDelivery.Domain.Enums;
+﻿using OrderDelivery.Domain.Enums;
 
 namespace OrderDelivery.Domain.Entities
 {

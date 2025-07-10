@@ -1,5 +1,4 @@
-﻿
-namespace OrderDelivery.Domain.Entities
+﻿namespace OrderDelivery.Domain.Entities
 {
     public class Merchant
     {

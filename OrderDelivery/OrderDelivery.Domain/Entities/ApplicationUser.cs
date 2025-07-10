@@ -19,6 +19,7 @@ namespace OrderDelivery.Domain.Entities
         // Navigation Properties
         public virtual Merchant? Merchant { get; set; }
         public virtual Driver? Driver { get; set; }
+        public virtual Admin? Admin { get; set; }
 
     }
 }
