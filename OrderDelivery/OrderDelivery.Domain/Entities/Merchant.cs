@@ -8,7 +8,7 @@
         public string StoreName { get; set; } = string.Empty;
         public string StoreAddress { get; set; } = string.Empty;
         public string StoreType { get; set; } = string.Empty;
-        public decimal StoreLatitude { get; set; } 
+        public decimal StoreLatitude { get; set; }
         public decimal StoreLongitude { get; set; }
         public decimal Rating { get; set; }
         public int TotalOrders { get; set; }
@@ -20,3 +20,4 @@
         public virtual ApplicationUser AppUser { get; set; } = null!;
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
     }
+}
