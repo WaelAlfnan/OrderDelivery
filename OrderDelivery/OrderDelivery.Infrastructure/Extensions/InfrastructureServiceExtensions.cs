@@ -2,8 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OrderDelivery.Domain;
 using OrderDelivery.Domain.Entities;
+using OrderDelivery.Domain.Interfaces;
+using OrderDelivery.Infrastructure.Data;
 using OrderDelivery.Infrastructure.Data.Contexts;
+using OrderDelivery.Infrastructure.Data.Repositories;
 
 namespace OrderDelivery.Infrastructure.Extensions
 {
@@ -54,8 +58,8 @@ namespace OrderDelivery.Infrastructure.Extensions
             .AddDefaultTokenProviders();
 
             // Register repositories and unit of work
-            //services.AddScoped<IGenericRepository, GenericRepository>();
-            //services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;
         }
