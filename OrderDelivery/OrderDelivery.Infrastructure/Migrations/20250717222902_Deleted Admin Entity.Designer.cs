@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OrderDelivery.Infrastructure.Data.Contexts;
 
@@ -11,9 +12,11 @@ using OrderDelivery.Infrastructure.Data.Contexts;
 namespace OrderDelivery.Infrastructure.Migrations
 {
     [DbContext(typeof(OrderDeliveryDbContext))]
-    partial class OrderDeliveryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250717222902_Deleted Admin Entity")]
+    partial class DeletedAdminEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

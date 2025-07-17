@@ -39,9 +39,6 @@ namespace OrderDelivery.Infrastructure.Configurations
                 .IsRequired()
                 .HasMaxLength(50);
 
-            builder.Property(x => x.UserType)
-                .IsRequired();
-
             builder.Property(x => x.PhoneNumber)
                 .IsRequired()
                 .HasMaxLength(20);
@@ -59,11 +56,6 @@ namespace OrderDelivery.Infrastructure.Configurations
             builder.HasOne(x => x.Driver)
                 .WithOne(x => x.AppUser)
                 .HasForeignKey<Driver>(x => x.ApplicationUserId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            builder.HasOne(x => x.Admin)
-                .WithOne(x => x.AppUser)
-                .HasForeignKey<Admin>(x => x.ApplicationUserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // One-to-Many relationships

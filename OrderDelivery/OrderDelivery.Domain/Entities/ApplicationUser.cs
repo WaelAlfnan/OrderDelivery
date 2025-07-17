@@ -11,13 +11,11 @@ namespace OrderDelivery.Domain.Entities
         public string NationalIdFrontPhotoUrl { get; set; } = string.Empty;
         public string NationalIdBackPhotoUrl { get; set; } = string.Empty;
         public string NationalIdNumber { get; set; } = string.Empty;
-        public UserType UserType { get; set; }
 
 
         // Navigation Properties (One-to-One)
         public virtual Merchant? Merchant { get; set; }
         public virtual Driver? Driver { get; set; }
-        public virtual Admin? Admin { get; set; }
 
         // Navigation Properties (One-to-Many)
         public virtual ICollection<Rating> RatingsGiven { get; set; } = new List<Rating>();

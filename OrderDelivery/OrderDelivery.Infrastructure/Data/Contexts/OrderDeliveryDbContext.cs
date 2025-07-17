@@ -16,12 +16,21 @@ namespace OrderDelivery.Infrastructure.Data.Contexts
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Merchant> Merchants { get; set; }
         public DbSet<Driver> Drivers { get; set; }
-        public DbSet<Admin> Admins { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<Residence> Residences { get; set; }
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseLazyLoadingProxies();
+            }
+            base.OnConfiguring(optionsBuilder);
+        }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -31,7 +40,6 @@ namespace OrderDelivery.Infrastructure.Data.Contexts
             builder.ApplyConfiguration(new ApplicationUserConfiguration());
             builder.ApplyConfiguration(new MerchantConfiguration());
             builder.ApplyConfiguration(new DriverConfiguration());
-            builder.ApplyConfiguration(new AdminConfiguration());
             builder.ApplyConfiguration(new OrderConfiguration());
             builder.ApplyConfiguration(new VehicleConfiguration());
             builder.ApplyConfiguration(new ResidenceConfiguration());

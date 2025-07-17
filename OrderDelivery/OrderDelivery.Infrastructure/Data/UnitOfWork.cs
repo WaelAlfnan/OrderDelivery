@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Storage;
 using OrderDelivery.Domain;
 using OrderDelivery.Domain.Interfaces;
+using OrderDelivery.Infrastructure.Data.Contexts;
 using OrderDelivery.Infrastructure.Data.Repositories;
 
 namespace OrderDelivery.Infrastructure.Data
@@ -11,12 +12,12 @@ namespace OrderDelivery.Infrastructure.Data
     /// </summary>
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly DbContext _context;
+        private readonly OrderDeliveryDbContext _context;
         private readonly Dictionary<Type, object> _repositories;
         private IDbContextTransaction? _currentTransaction;
         private bool _disposed;
 
-        public UnitOfWork(DbContext context)
+        public UnitOfWork(OrderDeliveryDbContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
             _repositories = new Dictionary<Type, object>();
