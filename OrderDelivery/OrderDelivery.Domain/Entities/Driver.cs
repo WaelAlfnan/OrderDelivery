@@ -1,4 +1,5 @@
 ﻿using OrderDelivery.Domain.Enums;
+using System.Text.Json.Serialization;
 
 namespace OrderDelivery.Domain.Entities
 {
@@ -17,9 +18,13 @@ namespace OrderDelivery.Domain.Entities
 
 
         // Navigation Properties
+        [JsonIgnore]
         public virtual ApplicationUser AppUser { get; set; } = null!;
+        [JsonIgnore]
         public virtual Vehicle? Vehicle { get; set; }
+        [JsonIgnore]
         public virtual Residence Residence { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Order> OrdersDelivered { get; set; } = new List<Order>();
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace OrderDelivery.Domain.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace OrderDelivery.Domain.Entities
 {
     public class Merchant
     {
@@ -17,7 +19,9 @@
 
 
         // Navigation Properties
+        [JsonIgnore]
         public virtual ApplicationUser AppUser { get; set; } = null!;
+        [JsonIgnore]
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

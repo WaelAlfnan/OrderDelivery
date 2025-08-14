@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using OrderDelivery.Domain.Enums;
+using System.Text.Json.Serialization;
 
 namespace OrderDelivery.Domain.Entities
 {
@@ -14,13 +15,18 @@ namespace OrderDelivery.Domain.Entities
 
 
         // Navigation Properties (One-to-One)
+        [JsonIgnore]
         public virtual Merchant? Merchant { get; set; }
+        [JsonIgnore]
         public virtual Driver? Driver { get; set; }
 
         // Navigation Properties (One-to-Many)
+        [JsonIgnore]
         public virtual ICollection<Rating> RatingsGiven { get; set; } = new List<Rating>();
+        [JsonIgnore]
         public virtual ICollection<Rating> RatingsReceived { get; set; } = new List<Rating>();
-        public ICollection<Notification> Notifications { get; set; } = new List<Notification>();
+        [JsonIgnore]
+        public virtual ICollection<Notification> Notifications { get; set; } = new List<Notification>();
 
 
     }

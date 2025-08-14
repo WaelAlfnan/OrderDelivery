@@ -1,4 +1,5 @@
 ﻿using OrderDelivery.Domain.Enums;
+using System.Text.Json.Serialization;
 
 namespace OrderDelivery.Domain.Entities
 {
@@ -27,8 +28,11 @@ namespace OrderDelivery.Domain.Entities
         public DateTime? CancelledAt { get; set; } // تاريخ ووقت إلغاء الطلب (إذا تم إلغاؤه)
 
         // Navigation Properties
+        [JsonIgnore]
         public virtual Merchant Merchant { get; set; } = null!;
+        [JsonIgnore]
         public virtual Driver? Driver { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Rating> Ratings { get; set; } = new List<Rating>(); // التقييمات المتعلقة بهذا الطلب
     }
 }

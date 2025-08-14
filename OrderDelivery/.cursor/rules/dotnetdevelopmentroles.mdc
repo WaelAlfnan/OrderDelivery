@@ -1,0 +1,201 @@
+---
+alwaysApply: true
+---
+
+  # .NET Development Rules
+
+  You are a senior .NET backend developer and an expert in C#, ASP.NET Core, and Entity Framework Core.
+
+
+#### **📂 Project Architecture**  
+```
+src/  
+├── OrderDeliveryApi/               # API Layer (Presentation)
+│   ├── Controllers/                # API Controllers  
+│   ├── Middleware/                 # Custom Middleware  
+│   ├── appsettings.json            # Configurations  
+│   └── Program.cs                  # Startup & DI  
+│  
+├── OrderDelivery.Application/      # Business Logic Layer  
+│   ├── DTOs/                       # Request/Response Models  
+│   ├── Interfaces/                 # Service Contracts  
+│   ├── Mappers/                    # Manual DTO Mappings  
+│   ├── Services/                   # Business Logic  
+│   └── Validators/                 # FluentValidation Rules  
+│  
+├── OrderDelivery.Domain/           # Core Domain Layer  
+│   ├── Entities/                   # Domain Models  
+│   ├── Enums/                      # Enumerations  
+│   ├── Interfaces/                 # Repository Contracts  
+│   └── UnitOfWork.cs               # Unit of Work Pattern  
+│  
+└── OrderDelivery.Infrastructure/   # Data & External Services  
+    ├── Configurations/             # EF Core Configs  
+    ├── Data/                       # Database Context  
+    ├── Repositories/               # Data Access Layer
+    ├── Extensions/                 # Helper Extensions 
+    └── Migrations/  
+
+tests/  
+├── UnitTests/                      # Unit Tests  
+│   ├── Application/                # Service & Validator Tests  
+│   ├── Mappers/                    # Mapping Tests  
+│   └── Infrastructure/             # Repository Tests  
+│  
+└── IntegrationTests/               # Integration Tests  
+    ├── Api/                        # Controller Tests  
+    └── Db/                         # Database Integration Tests  
+```  
+
+---
+
+### **📜 Development Rules (Commands Only)**  
+
+#### **1. Architecture & Layers**  
+✅ **API Layer (OrderDeliveryApi)**  
+- Only handle HTTP requests/responses.  
+- No business logic inside controllers.  
+- Use dependency injection for services.  
+
+✅ **Application Layer (OrderDelivery.Application)**  
+- Contains all business logic.  
+- Services must implement interfaces.  
+- Manual DTO mapping only (no AutoMapper for DTOs).  
+
+✅ **Domain Layer (OrderDelivery.Domain)**  
+- Pure domain models and contracts.  
+- No external dependencies.  
+
+✅ **Infrastructure Layer (OrderDelivery.Infrastructure)**  
+- Database and external service integrations.  
+- Repository pattern for data access.  
+
+---
+
+#### **2. DTOs & Mappings**  
+✅ **DTO Rules**  
+- Must be records (immutable).  
+- Separate folders for `Requests` and `Responses`.  
+- No domain entities exposed in APIs.  
+
+✅ **Manual Mapping Rules**  
+- One mapper per DTO transformation.  
+- Mappers must be static methods.  
+- Explicit null checks required.  
+
+✅ **Testing Mappings**  
+- 100% test coverage for mappers.  
+- Test edge cases (null, empty collections).  
+
+---
+
+#### **3. Business Logic (Services)**  
+✅ **Service Contracts**  
+- Every service must have an interface.  
+- Use dependency injection (constructor-based).  
+
+✅ **Service Implementation**  
+- No direct database access (use repositories).  
+- No DTO mapping inside services.  
+
+✅ **Testing Services**  
+- Mock dependencies in unit tests.  
+- Test all business scenarios.  
+
+---
+
+#### **4. Data Access (Repositories & EF Core)**  
+✅ **Repository Pattern**  
+- One repository per aggregate root.  
+- Use `UnitOfWork` for transactions.  
+
+✅ **Entity Framework Rules**  
+- Configurations in separate folder.  
+- No raw SQL in controllers.  
+
+✅ **Testing Repositories**  
+- Unit test repository logic.  
+- Integration tests for DB operations.  
+
+---
+
+#### **5. API & Controllers**  
+✅ **Controller Rules**  
+- Thin controllers (delegate to services).  
+- Use `ActionResult<T>` for responses.  
+- Proper HTTP status codes.  
+
+✅ **Validation**  
+- FluentValidation for all requests.  
+- Global exception handling.  
+
+✅ **Testing Controllers**  
+- Integration tests for all endpoints.  
+- Test authentication/authorization.  
+
+---
+
+#### **6. Testing Strategy**  
+✅ **Unit Tests**  
+- Test services, validators, mappers.  
+- Mock external dependencies.  
+
+✅ **Integration Tests**  
+- Test API endpoints.  
+- Test database operations.  
+
+✅ **Test Naming Convention**  
+- `MethodName_Scenario_ExpectedResult`  
+
+---
+
+#### **7. Security & Best Practices**  
+✅ **Security Rules**  
+- Validate all inputs.  
+- Use JWT for authentication.  
+- Never expose sensitive data in DTOs.  
+
+✅ **Performance Rules**  
+- Async/await for I/O operations.  
+- Avoid N+1 queries in EF Core.  
+
+✅ **Code Quality**  
+- SOLID principles.  
+- Clean code practices.  
+- Meaningful naming conventions.  
+
+---
+
+### **✅ Checklist for New Features**  
+1. **Design DTOs** (Request/Response).  
+2. **Create Mappers** (manual, with tests).  
+3. **Define Service Interfaces**.  
+4. **Implement Business Logic** (services).  
+5. **Add Validation Rules**.  
+6. **Implement API Endpoint**.  
+7. **Write Unit & Integration Tests**.  
+8. **Update Documentation**.  
+
+---
+
+### **🚫 Anti-Patterns to Avoid**  
+❌ Business logic in controllers.  
+❌ AutoMapper for DTOs.  
+❌ Raw SQL in APIs.  
+❌ Untested mappers.  
+❌ Exposing domain entities directly.  
+
+---
+
+### **🔄 Workflow**  
+1. **Design** (DTOs, Contracts).  
+2. **Implement** (Mappers → Services → API).  
+3. **Test** (Unit → Integration).  
+4. **Review** (Code Quality, Security).  
+5. **Deploy**.  
+
+This ensures:  
+✔ **Clean separation of concerns**  
+✔ **Testable and maintainable code**  
+✔ **High performance & security**  
+✔ **Consistency across the project**

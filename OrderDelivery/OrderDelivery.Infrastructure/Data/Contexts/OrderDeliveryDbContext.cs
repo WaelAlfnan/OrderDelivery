@@ -21,6 +21,7 @@ namespace OrderDelivery.Infrastructure.Data.Contexts
         public DbSet<Residence> Residences { get; set; }
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+        public DbSet<PendingRegistration> PendingRegistrations { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

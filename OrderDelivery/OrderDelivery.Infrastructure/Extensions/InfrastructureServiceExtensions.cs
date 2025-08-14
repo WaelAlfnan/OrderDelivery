@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,45 +24,80 @@ namespace OrderDelivery.Infrastructure.Extensions
             this IServiceCollection services, 
             IConfiguration configuration)
         {
-            // Register the DbContext with the connection string from configuration
-            services.AddDbContext<OrderDeliveryDbContext>(options =>
-                options.UseSqlServer(
-                    configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly("OrderDelivery.Infrastructure")));
-
-            // Register Identity services
-            services.AddIdentity<ApplicationUser, IdentityRole<Guid>>(options =>
+            try
             {
-                // Password settings
-                options.Password.RequireDigit = true;
-                options.Password.RequireLowercase = true;
-                options.Password.RequireNonAlphanumeric = true;
-                options.Password.RequireUppercase = true;
-                options.Password.RequiredLength = 8;
-                options.Password.RequiredUniqueChars = 1;
+                // Database
+                var connectionString = configuration.GetConnectionString("DefaultConnection");
+                if (string.IsNullOrEmpty(connectionString))
+                {
+                    throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+                }
 
-                // Lockout settings
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
-                options.Lockout.MaxFailedAccessAttempts = 5;
-                options.Lockout.AllowedForNewUsers = true;
+                services.AddDbContext<OrderDeliveryDbContext>(options =>
+                    options.UseSqlServer(connectionString));
 
-                // User settings
-                options.User.AllowedUserNameCharacters = "0123456789+";
-                options.User.RequireUniqueEmail = true;
+                // Register Identity services
+                services.AddIdentity<ApplicationUser, IdentityRole<Guid>>(options =>
+                {
+                    // Password settings
+                    options.Password.RequireDigit = true;
+                    options.Password.RequireLowercase = true;
+                    options.Password.RequireNonAlphanumeric = true;
+                    options.Password.RequireUppercase = true;
+                    options.Password.RequiredLength = 8;
+                    options.Password.RequiredUniqueChars = 1;
 
-                // SignIn settings
-                options.SignIn.RequireConfirmedAccount = true;
-                options.SignIn.RequireConfirmedEmail = false;
-                options.SignIn.RequireConfirmedPhoneNumber = true;
-            })
-            .AddEntityFrameworkStores<OrderDeliveryDbContext>()
-            .AddDefaultTokenProviders();
+                    // Lockout settings
+                    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                    options.Lockout.MaxFailedAccessAttempts = 5;
+                    options.Lockout.AllowedForNewUsers = true;
 
-            // Register repositories and unit of work
-            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+                    // User settings
+                    options.User.AllowedUserNameCharacters = "0123456789+";
+                    options.User.RequireUniqueEmail = true;
 
-            return services;
+                    // SignIn settings
+                    options.SignIn.RequireConfirmedAccount = true;
+                    options.SignIn.RequireConfirmedEmail = false;
+                    options.SignIn.RequireConfirmedPhoneNumber = true;
+                })
+                .AddEntityFrameworkStores<OrderDeliveryDbContext>()
+                .AddDefaultTokenProviders();
+
+                // Repositories
+                services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+                services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+                return services;
+            }
+            catch (Exception ex)
+            {
+                // Log the error and rethrow
+                throw new InvalidOperationException("Failed to configure infrastructure services", ex);
+            }
+        }
+
+        /// <summary>
+        /// Seeds default roles in the database
+        /// </summary>
+        /// <param name="app">The web application instance</param>
+        /// <returns>The web application for method chaining</returns>
+        public static async Task<IApplicationBuilder> SeedRolesAsync(this IApplicationBuilder app)
+        {
+            using var scope = app.ApplicationServices.CreateScope();
+            var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole<Guid>>>();
+
+            var roles = new[] { "Driver", "Merchant", "Admin" };
+
+            foreach (var role in roles)
+            {
+                if (!await roleManager.RoleExistsAsync(role))
+                {
+                    await roleManager.CreateAsync(new IdentityRole<Guid>(role));
+                }
+            }
+
+            return app;
         }
     }
 }
