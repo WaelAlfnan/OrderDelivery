@@ -190,9 +190,9 @@ The Use Case Diagram illustrates the functional requirements of the system from 
 ---
 
 ## **Project Documentation**
-For comprehensive project details including detailed requirements, technical specifications, and API documentation (e.g., Swagger/OpenAPI), refer to:
+For comprehensive project details including detailed requirements, technical specifications, and API documentation (Swagger), refer to:
 
-- [https://localhost:7239/swagger](https://localhost:7239/swagger/index.html)
+- [https://orderdeliveryapi.runasp.net/swagger/index.html](https://orderdeliveryapi.runasp.net/swagger/index.html)
 
 ---
 
