@@ -239,11 +239,11 @@ public class RegistrationStepsService : IRegistrationStepsService
     {
         var repo = _unitOfWork.Repository<PendingRegistration>();
         var pending = await repo.FirstOrDefaultAsync(x => x.PhoneNumber == dto.PhoneNumber);
-        if (pending == null || pending.Step < 6 || pending.Role != "Driver") return false;
+        if (pending == null || pending.Step < 7 || pending.Role != "Driver") return false;
 
         var residenceInfo = dto.ToResidenceInfoData();
         pending.ResidenceInfoJson = JsonSerializer.Serialize(residenceInfo);
-        pending.Step = 7;
+        pending.Step = 8;
         pending.UpdatedAt = DateTime.UtcNow;
         repo.Update(pending);
         await _unitOfWork.SaveChangesAsync();
